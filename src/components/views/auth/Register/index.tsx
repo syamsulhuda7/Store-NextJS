@@ -7,7 +7,9 @@ const RegisterView = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<String>("");
 
-  const { push } = useRouter();
+  const { push, query } = useRouter();
+
+  const callbackUrl: string | string[] = query.callbackUrl || "/";
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
@@ -42,7 +44,7 @@ const RegisterView = () => {
   return (
     <div className={styles.register}>
       <form onSubmit={handleSubmit} className={styles.register__form} action="">
-        <h1 className={styles.register__form__title}>REGISTER</h1>
+        <h1 className={styles.register__form__title}>SIGN UP</h1>
         {error && <p className={styles.register__form__error}>{error}</p>}
         <label className={styles.register__form__label} htmlFor="fullname">
           Fullname
@@ -81,7 +83,7 @@ const RegisterView = () => {
           id="password"
         />
         <button className={styles.register__form__submit} type="submit">
-          {isLoading ? "Loading..." : "Register"}
+          {isLoading ? "Loading..." : "Sign Up"}
         </button>
       </form>
       <p className={styles.register__note}>
