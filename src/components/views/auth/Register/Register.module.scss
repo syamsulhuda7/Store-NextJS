@@ -1,0 +1,51 @@
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  &__form {
+    width: 40%;
+    padding: 30px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    &__title {
+      font-size: 32px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    &__error {
+      margin-bottom: 10px;
+      color: red;
+    }
+    &__label {
+      margin-bottom: 5px;
+    }
+    &__input {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: none;
+      outline: none;
+      background-color: rgb(238, 238, 238);
+    }
+    &__submit {
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      outline: none;
+      background-color: black;
+      color: white;
+    }
+  }
+  &__note {
+    margin-top: 10px;
+    text-align: center;
+    a {
+      color: rgb(25, 106, 255);
+      cursor: pointer;
+    }
+  }
+}
