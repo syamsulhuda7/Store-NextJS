@@ -1,3 +1,4 @@
+import Navbar from "@/components/layouts/Navbar";
 import "@/styles/globals.css";
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
@@ -20,6 +21,7 @@ export default function App({
   return (
     <SessionProvider session={session}>
       <div className={quicksand.className}>
+        <Navbar />
         <Component {...pageProps} />
       </div>
     </SessionProvider>

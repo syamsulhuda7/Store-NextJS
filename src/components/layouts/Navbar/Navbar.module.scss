@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background-color: rgb(0, 0, 102);
+  width: 100%;
+  &__button {
+    background-color: rgb(209, 153, 0);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(151, 117, 24);
+    }
+  }
+}
