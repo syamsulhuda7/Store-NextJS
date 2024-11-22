@@ -67,6 +67,16 @@ const LoginView = () => {
         <button className={styles.login__form__submit} type="submit">
           {isLoading ? "Loading..." : "Login"}
         </button>
+        <hr className={styles.login__form__devider} />
+        <div className={styles.login__form__google}>
+          <button
+            type="button"
+            onClick={() => signIn("google", { callbackUrl, redirect: false })}
+          >
+            <i style={{ fontSize: "20px" }} className="bx bxl-google" /> Login
+            With Google
+          </button>
+        </div>
       </form>
       <p className={styles.login__note}>
         Don&apos;t have an account?{" "}
