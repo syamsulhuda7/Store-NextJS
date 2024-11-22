@@ -1,0 +1,2 @@
+Register, Login, Logout (Next-auth)
+Login (credentials & google account)

@@ -45,26 +45,35 @@ const LoginView = () => {
 
   return (
     <div className={styles.login}>
-      <form onSubmit={handleSubmit} className={styles.login__form} action="">
-        <h1 className={styles.login__form__title}>LOGIN</h1>
-        {error && <p className={styles.login__form__error}>{error}</p>}
-        <Input label="Email" name="email" type="email" />
-        <Input label="Password" name="password" type="password" />
-        <Button type="submit">{isLoading ? "Loading..." : "Login"}</Button>
-        <hr className={styles.login__form__devider} />
-        <div className={styles.login__form__google}>
-          <Button
-            type="button"
-            onClick={() => signIn("google", { callbackUrl, redirect: false })}
-          >
-            <i className="bx bxl-google" /> Login With Google
-          </Button>
-        </div>
-      </form>
-      <p className={styles.login__note}>
-        Don&apos;t have an account?{" "}
-        <Link href="/auth/register">Register here</Link>
-      </p>
+      <div className={styles.login__container}>
+        <div className={styles.login__container__image}></div>
+        <form
+          onSubmit={handleSubmit}
+          className={styles.login__container__form}
+          action=""
+        >
+          <h1 className={styles.login__container__form__title}>LOGIN</h1>
+          {error && (
+            <p className={styles.login__container__form__error}>{error}</p>
+          )}
+          <Input label="Email" name="email" type="email" />
+          <Input label="Password" name="password" type="password" />
+          <Button type="submit">{isLoading ? "Loading..." : "Login"}</Button>
+          <hr className={styles.login__container__form__devider} />
+          <div className={styles.login__container__form__google}>
+            <Button
+              type="button"
+              onClick={() => signIn("google", { callbackUrl, redirect: false })}
+            >
+              <i className="bx bxl-google" /> Login With Google
+            </Button>
+          </div>
+          <p className={styles.login__container__form__note}>
+            Don&apos;t have an account?{" "}
+            <Link href="/auth/register">Register here</Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+@import "../../../styles/variable.scss";
+
 .button {
   padding: 10px;
   border: none;
@@ -10,9 +12,9 @@
 }
 
 .primary {
-  background-color: #000;
-  color: #fff;
+  background-color: $first-color;
+  color: $fourth-color;
   &:hover {
-    background-color: #0a0a0a;
+    background-color: $second-color;
   }
 }
