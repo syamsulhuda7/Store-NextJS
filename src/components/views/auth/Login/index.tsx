@@ -3,6 +3,7 @@ import styles from "./Login.module.scss";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
+import Input from "@/components/ui/Input";
 
 const LoginView = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -46,24 +47,8 @@ const LoginView = () => {
       <form onSubmit={handleSubmit} className={styles.login__form} action="">
         <h1 className={styles.login__form__title}>LOGIN</h1>
         {error && <p className={styles.login__form__error}>{error}</p>}
-        <label className={styles.login__form__label} htmlFor="email">
-          Email
-        </label>
-        <input
-          className={styles.login__form__input}
-          type="email"
-          name="email"
-          id="email"
-        />
-        <label className={styles.login__form__label} htmlFor="password">
-          Password
-        </label>
-        <input
-          className={styles.login__form__input}
-          type="password"
-          name="password"
-          id="password"
-        />
+        <Input label="Email" name="email" type="email" />
+        <Input label="Password" name="password" type="password" />
         <button className={styles.login__form__submit} type="submit">
           {isLoading ? "Loading..." : "Login"}
         </button>
