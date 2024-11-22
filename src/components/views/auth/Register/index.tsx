@@ -2,6 +2,8 @@ import Link from "next/link";
 import styles from "./Register.module.scss";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Input from "@/components/ui/Input";
+import Button from "@/components/ui/Button";
 
 const RegisterView = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -46,45 +48,16 @@ const RegisterView = () => {
       <form onSubmit={handleSubmit} className={styles.register__form} action="">
         <h1 className={styles.register__form__title}>REGISTER</h1>
         {error && <p className={styles.register__form__error}>{error}</p>}
-        <label className={styles.register__form__label} htmlFor="fullname">
-          Fullname
-        </label>
-        <input
-          className={styles.register__form__input}
-          type="text"
-          name="fullname"
-          id="fullname"
-        />
-        <label className={styles.register__form__label} htmlFor="email">
-          Email
-        </label>
-        <input
-          className={styles.register__form__input}
-          type="email"
-          name="email"
-          id="email"
-        />
-        <label className={styles.register__form__label} htmlFor="phone">
-          Phone
-        </label>
-        <input
-          className={styles.register__form__input}
-          type="text"
-          name="phone"
-          id="phone"
-        />
-        <label className={styles.register__form__label} htmlFor="password">
-          Password
-        </label>
-        <input
-          className={styles.register__form__input}
-          type="password"
+        <Input label="Fullname" name="fullname" type="text" placeholder="" />
+        <Input label="Email" name="email" type="email" placeholder="" />
+        <Input label="Phone" name="phone" type="number" placeholder="" />
+        <Input
+          label="Password"
           name="password"
-          id="password"
+          type="password"
+          placeholder=""
         />
-        <button className={styles.register__form__submit} type="submit">
-          {isLoading ? "Loading..." : "Register"}
-        </button>
+        <Button type="submit"> {isLoading ? "Loading..." : "Register"}</Button>
       </form>
       <p className={styles.register__note}>
         Already have an account? <Link href="/auth/login">Login here</Link>

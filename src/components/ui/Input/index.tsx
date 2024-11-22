@@ -6,9 +6,16 @@ type Propstypes = {
   name: string;
   type: string;
   placeholder?: string;
+  required?: boolean;
 };
 
-const Input = ({ label, name, type, placeholder }: Propstypes) => {
+const Input = ({
+  label,
+  name,
+  type,
+  placeholder,
+  required = true,
+}: Propstypes) => {
   return (
     <>
       {label && (
@@ -22,6 +29,7 @@ const Input = ({ label, name, type, placeholder }: Propstypes) => {
         name={name}
         id={name}
         placeholder={placeholder}
+        required={required}
       />
     </>
   );

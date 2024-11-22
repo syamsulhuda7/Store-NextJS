@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import Input from "@/components/ui/Input";
+import Button from "@/components/ui/Button";
 
 const LoginView = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -49,18 +50,15 @@ const LoginView = () => {
         {error && <p className={styles.login__form__error}>{error}</p>}
         <Input label="Email" name="email" type="email" />
         <Input label="Password" name="password" type="password" />
-        <button className={styles.login__form__submit} type="submit">
-          {isLoading ? "Loading..." : "Login"}
-        </button>
+        <Button type="submit">{isLoading ? "Loading..." : "Login"}</Button>
         <hr className={styles.login__form__devider} />
         <div className={styles.login__form__google}>
-          <button
+          <Button
             type="button"
             onClick={() => signIn("google", { callbackUrl, redirect: false })}
           >
-            <i style={{ fontSize: "20px" }} className="bx bxl-google" /> Login
-            With Google
-          </button>
+            <i className="bx bxl-google" /> Login With Google
+          </Button>
         </div>
       </form>
       <p className={styles.login__note}>

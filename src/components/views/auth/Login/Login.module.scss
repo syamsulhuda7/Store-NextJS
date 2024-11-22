@@ -32,37 +32,15 @@
       outline: none;
       background-color: rgb(238, 238, 238);
     }
-    &__submit {
-      margin-top: 10px;
-      padding: 10px;
-      border: none;
-      outline: none;
-      background-color: black;
-      color: white;
-      cursor: pointer;
-    }
     &__devider {
       margin: 15px 0px;
       display: flex;
     }
     &__google {
-      display: flex;
-      justify-content: center;
-      width: 100%;
       button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
         width: 100%;
-        padding: 10px;
-        border: none;
-        outline: none;
-        background-color: black;
-        color: white;
-        cursor: pointer;
-        &:hover {
-          background-color: rgb(29, 29, 29);
+        i {
+          font-size: 20px;
         }
       }
     }
