@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "./Login.module.scss";
 import { useRouter } from "next/router";
 import { useState } from "react";
