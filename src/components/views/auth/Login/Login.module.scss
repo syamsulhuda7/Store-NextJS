@@ -7,50 +7,15 @@
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  &__container {
+  &__devider {
+    margin: 15px 0px;
     display: flex;
-    width: 400px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-    &__image {
-      width: 15%;
-      height: 100%;
-      background-color: $third-color;
-    }
-    &__form {
-      width: 85%;
-      padding: 30px;
-      margin-bottom: 10px;
-      display: flex;
-      flex-direction: column;
-      &__title {
-        font-size: 50px;
-        margin-bottom: 30px;
-        text-align: center;
-      }
-      &__error {
-        margin-bottom: 10px;
-        color: red;
-        text-align: center;
-      }
-      &__devider {
-        margin: 15px 0px;
-        display: flex;
-      }
-      &__google {
-        button {
-          width: 100%;
-          i {
-            font-size: 20px;
-          }
-        }
-      }
-      &__note {
-        margin-top: 30px;
-        text-align: center;
-        a {
-          color: rgb(25, 106, 255);
-          cursor: pointer;
-        }
+  }
+  &__google {
+    button {
+      width: 100%;
+      i {
+        font-size: 20px;
       }
     }
   }

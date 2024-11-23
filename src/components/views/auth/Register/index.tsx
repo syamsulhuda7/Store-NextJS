@@ -1,14 +1,13 @@
-import Link from "next/link";
-import styles from "./Register.module.scss";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
 import authServices from "@/services/auth";
+import AuthLayout from "@/components/layouts/AuthLayout";
 
 const RegisterView = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<String>("");
+  const [error, setError] = useState<string>("");
 
   const { push } = useRouter();
 
@@ -40,25 +39,19 @@ const RegisterView = () => {
   };
 
   return (
-    <div className={styles.register}>
-      <form onSubmit={handleSubmit} className={styles.register__form} action="">
-        <h1 className={styles.register__form__title}>REGISTER</h1>
-        {error && <p className={styles.register__form__error}>{error}</p>}
-        <Input label="Fullname" name="fullname" type="text" placeholder="" />
-        <Input label="Email" name="email" type="email" placeholder="" />
-        <Input label="Phone" name="phone" type="number" placeholder="" />
-        <Input
-          label="Password"
-          name="password"
-          type="password"
-          placeholder=""
-        />
-        <Button type="submit"> {isLoading ? "Loading..." : "Register"}</Button>
-      </form>
-      <p className={styles.register__note}>
-        Already have an account? <Link href="/auth/login">Login here</Link>
-      </p>
-    </div>
+    <AuthLayout
+      error={error}
+      title="REGISTER"
+      link="/auth/login"
+      linkText="Already have an account? Login "
+      submitValue={handleSubmit}
+    >
+      <Input label="Fullname" name="fullname" type="text" placeholder="" />
+      <Input label="Email" name="email" type="email" placeholder="" />
+      <Input label="Phone" name="phone" type="number" placeholder="" />
+      <Input label="Password" name="password" type="password" placeholder="" />
+      <Button type="submit"> {isLoading ? "Loading..." : "Register"}</Button>
+    </AuthLayout>
   );
 };
 

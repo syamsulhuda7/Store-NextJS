@@ -5,10 +5,11 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
+import AuthLayout from "@/components/layouts/AuthLayout";
 
 const LoginView = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<String>("");
+  const [error, setError] = useState<string>("");
 
   const { push, query } = useRouter();
 
@@ -44,37 +45,26 @@ const LoginView = () => {
   };
 
   return (
-    <div className={styles.login}>
-      <div className={styles.login__container}>
-        <div className={styles.login__container__image}></div>
-        <form
-          onSubmit={handleSubmit}
-          className={styles.login__container__form}
-          action=""
+    <AuthLayout
+      title="Login"
+      link="/auth/register"
+      linkText="Don't have an account? Register "
+      error={error}
+      submitValue={handleSubmit}
+    >
+      <Input label="Email" name="email" type="email" />
+      <Input label="Password" name="password" type="password" />
+      <Button type="submit">{isLoading ? "Loading..." : "Login"}</Button>
+      <hr className={styles.login__devider} />
+      <div className={styles.login__google}>
+        <Button
+          type="button"
+          onClick={() => signIn("google", { callbackUrl, redirect: false })}
         >
-          <h1 className={styles.login__container__form__title}>LOGIN</h1>
-          {error && (
-            <p className={styles.login__container__form__error}>{error}</p>
-          )}
-          <Input label="Email" name="email" type="email" />
-          <Input label="Password" name="password" type="password" />
-          <Button type="submit">{isLoading ? "Loading..." : "Login"}</Button>
-          <hr className={styles.login__container__form__devider} />
-          <div className={styles.login__container__form__google}>
-            <Button
-              type="button"
-              onClick={() => signIn("google", { callbackUrl, redirect: false })}
-            >
-              <i className="bx bxl-google" /> Login With Google
-            </Button>
-          </div>
-          <p className={styles.login__container__form__note}>
-            Don&apos;t have an account?{" "}
-            <Link href="/auth/register">Register here</Link>
-          </p>
-        </form>
+          <i className="bx bxl-google" /> Login With Google
+        </Button>
       </div>
-    </div>
+    </AuthLayout>
   );
 };
 
