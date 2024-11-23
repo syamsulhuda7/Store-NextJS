@@ -1,11 +1,11 @@
-.navbar {
+@import "../../../styles/variable.scss" .navbar {
   display: flex;
   justify-content: flex-end;
   padding: 10px 20px;
-  background-color: rgb(0, 0, 102);
+  background-color: $first-color;
   width: 100%;
   &__button {
-    background-color: rgb(209, 153, 0);
+    background-color: $fourth-color;
     padding: 10px;
     border-radius: 5px;
     border: none;
