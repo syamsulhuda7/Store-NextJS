@@ -1,0 +1,14 @@
+.modal {
+  width: fit-content;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  &__title {
+    text-align: center;
+  }
+  &__button {
+    text-align: center;
+  }
+}

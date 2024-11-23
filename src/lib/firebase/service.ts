@@ -1,6 +1,7 @@
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   getDoc,
   getDocs,
@@ -79,5 +80,20 @@ export async function updateData(
     .catch((error) => {
       callback(false);
       console.log(error);
+    });
+}
+
+export async function deleteData(
+  collectionName: string,
+  id: string,
+  callback: Function
+) {
+  const docRef = doc(firestore, collectionName, id);
+  await deleteDoc(docRef)
+    .then(() => {
+      callback(true);
+    })
+    .catch(() => {
+      callback(false);
     });
 }

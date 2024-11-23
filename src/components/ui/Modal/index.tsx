@@ -1,12 +1,13 @@
 import styles from "./Modal.module.scss";
-import React, { use, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 type propstype = {
   children: React.ReactNode;
   onClose: any;
+  className?: string;
 };
 
-const Modal = ({ children, onClose }: propstype) => {
+const Modal = ({ children, onClose, className }: propstype) => {
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (ref.current && !ref.current.contains(event.target)) {
@@ -22,7 +23,7 @@ const Modal = ({ children, onClose }: propstype) => {
   const ref: any = useRef();
   return (
     <div className={styles.modal}>
-      <div className={styles.modal__main} ref={ref}>
+      <div className={`${styles.modal__main} ${className}`} ref={ref}>
         {children}
       </div>
     </div>

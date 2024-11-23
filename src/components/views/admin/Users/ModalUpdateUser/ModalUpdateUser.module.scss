@@ -1,0 +1,13 @@
+.modal {
+  &__title {
+    text-align: center;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &__button {
+      font-weight: 700;
+    }
+  }
+}

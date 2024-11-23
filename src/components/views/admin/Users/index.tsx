@@ -1,22 +1,37 @@
 import AdminLayout from "@/components/layouts/AdminLayout";
 import Button from "@/components/ui/Button";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Users.module.scss";
-import Modal from "@/components/ui/Modal";
+import ModalUpdateUser from "./ModalUpdateUser";
+import ModalDeleteUser from "./ModalDeleteUser";
 
 type propstype = {
   users: any;
 };
 
 const UsersAdminView = ({ users }: propstype) => {
-  const [modalUpdateUser, setModalUpdateUser] = useState<any>({});
+  const [updatedUser, setUpdatedUser] = useState<any>({});
+  const [deletedUser, setDeletedUser] = useState<any>({});
+  const [usersData, setUsersData] = useState<any>([]);
+
+  useEffect(() => {
+    setUsersData(users);
+  }, [users]);
   return (
     <>
-      {Object.keys(modalUpdateUser).length > 0 && (
-        <Modal onClose={() => setModalUpdateUser({})}>
-          <h1>Update User</h1>
-          <p>{modalUpdateUser.email}</p>
-        </Modal>
+      {Object.keys(updatedUser).length > 0 && (
+        <ModalUpdateUser
+          updatedUser={updatedUser}
+          setUpdatedUser={setUpdatedUser}
+          setUsersData={setUsersData}
+        />
+      )}
+      {Object.keys(deletedUser).length > 0 && (
+        <ModalDeleteUser
+          deletedUser={deletedUser}
+          setDeletedUser={setDeletedUser}
+          setUsersData={setUsersData}
+        />
       )}
       <AdminLayout>
         <div className={styles.users}>
@@ -33,7 +48,7 @@ const UsersAdminView = ({ users }: propstype) => {
               </tr>
             </thead>
             <tbody>
-              {users.map((user: any, index: number) => (
+              {usersData.map((user: any, index: number) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{user.fullname}</td>
@@ -43,18 +58,18 @@ const UsersAdminView = ({ users }: propstype) => {
                   <td>
                     <div className={styles.users__table__action}>
                       <Button
-                        onClick={() => setModalUpdateUser(user)}
+                        onClick={() => setUpdatedUser(user)}
                         type="button"
                         variant="secondary"
                       >
-                        Update
+                        <i className="bx bxs-edit"></i>
                       </Button>
                       <Button
-                        onClick={() => setModalUpdateUser(user)}
+                        onClick={() => setDeletedUser(user)}
                         type="button"
-                        variant="secondary"
+                        variant="primary"
                       >
-                        Delete
+                        <i className="bx bxs-trash"></i>
                       </Button>
                     </div>
                   </td>

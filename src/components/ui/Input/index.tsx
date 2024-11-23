@@ -7,6 +7,8 @@ type Propstypes = {
   type: string;
   placeholder?: string;
   required?: boolean;
+  defaultValue?: string;
+  disabled?: boolean;
 };
 
 const Input = ({
@@ -15,6 +17,8 @@ const Input = ({
   type,
   placeholder,
   required = true,
+  defaultValue,
+  disabled,
 }: Propstypes) => {
   return (
     <>
@@ -30,6 +34,8 @@ const Input = ({
         id={name}
         placeholder={placeholder}
         required={required}
+        defaultValue={defaultValue}
+        disabled={disabled}
       />
     </>
   );
