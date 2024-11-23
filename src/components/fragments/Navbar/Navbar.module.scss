@@ -1,4 +1,6 @@
-@import "../../../styles/variable.scss" .navbar {
+@import "../../../styles/variable.scss";
+
+.navbar {
   display: flex;
   justify-content: flex-end;
   padding: 10px 20px;
@@ -9,10 +11,10 @@
     padding: 10px;
     border-radius: 5px;
     border: none;
-    color: white;
+    color: $third-color;
     cursor: pointer;
     &:hover {
-      background-color: rgb(151, 117, 24);
+      background-color: $fourth-color;
     }
   }
 }

@@ -1,9 +1,10 @@
-import Navbar from "@/components/layouts/Navbar";
+import Navbar from "@/components/fragments/Navbar";
 import "@/styles/globals.css";
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
 import { Space_Grotesk, Quicksand } from "next/font/google";
 import Head from "next/head";
+import { usePathname } from "next/navigation";
 
 const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
@@ -19,6 +20,8 @@ export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }: AppProps) {
+  const disableNavbar = ["auth", "admin"];
+  const pathname = usePathname();
   return (
     <SessionProvider session={session}>
       <Head>
@@ -28,7 +31,7 @@ export default function App({
         />
       </Head>
       <div className={quicksand.className}>
-        <Navbar />
+        {!disableNavbar.includes(pathname.split("/")[1]) && <Navbar />}
         <Component {...pageProps} />
       </div>
     </SessionProvider>

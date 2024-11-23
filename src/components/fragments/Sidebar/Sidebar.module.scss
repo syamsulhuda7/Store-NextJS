@@ -1,0 +1,55 @@
+@import "../../../styles/variable.scss";
+
+.sidebar {
+  background-color: $second-color;
+  color: $fourth-color;
+  padding: 20px;
+  width: 300px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__top {
+    &__title {
+      font-size: 30px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    &__lists {
+      list-style: none;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      color: $light-color;
+      &__item {
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          background-color: $first-color;
+        }
+        &__active {
+          background-color: $first-color;
+        }
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  &__bottom {
+    &__button {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 100%;
+      font-weight: 700;
+    }
+  }
+}

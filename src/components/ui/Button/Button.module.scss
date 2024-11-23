@@ -9,6 +9,11 @@
   align-items: center;
   gap: 5px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
 }
 
 .primary {
@@ -16,5 +21,13 @@
   color: $fourth-color;
   &:hover {
     background-color: $second-color;
+  }
+}
+
+.secondary {
+  background-color: $fourth-color;
+  color: $first-color;
+  &:hover {
+    background-color: $third-color;
   }
 }
