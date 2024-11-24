@@ -15,12 +15,12 @@ const listSidebarItem = [
   {
     title: "Orders",
     url: "/member/orders",
-    icon: "bxs-package",
+    icon: "bxs-cart",
   },
   {
     title: "Profile",
     url: "/member/profile",
-    icon: "bxs-group",
+    icon: "bxs-user",
   },
 ];
 

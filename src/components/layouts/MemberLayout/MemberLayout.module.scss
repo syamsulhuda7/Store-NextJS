@@ -1,7 +1,10 @@
 .memberLayout {
   display: flex;
   &__main {
-    width: 100%;
+    flex-grow: 1;
     padding: 40px 60px;
+    overflow: auto;
+    max-height: 100vh;
+    scrollbar-width: none;
   }
 }

@@ -47,6 +47,8 @@ export async function loginWithGoogle(
     created_at?: Date;
     updated_at?: Date;
     password?: string;
+    image?: string;
+    id?: string;
   },
   callback: Function
 ) {
@@ -59,8 +61,9 @@ export async function loginWithGoogle(
     data.created_at = new Date();
     data.updated_at = new Date();
     data.password = "";
-    await addData("users", data, (result: boolean) => {
-      if (result) {
+    await addData("users", data, (status: boolean, result: any) => {
+      data.id = result.path.replace("users/", "");
+      if (status) {
         callback(data);
       }
     });

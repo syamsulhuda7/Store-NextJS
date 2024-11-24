@@ -20,7 +20,7 @@ export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }: AppProps) {
-  const disableNavbar = ["auth", "admin"];
+  const disableNavbar = ["auth", "admin", "member"];
   const pathname = usePathname();
   return (
     <SessionProvider session={session}>

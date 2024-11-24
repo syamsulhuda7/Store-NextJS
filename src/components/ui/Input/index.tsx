@@ -21,7 +21,7 @@ const Input = ({
   disabled,
 }: Propstypes) => {
   return (
-    <>
+    <div className={styles.inputContainer}>
       {label && (
         <label className={styles.inputContainer__label} htmlFor={name}>
           {label}
@@ -37,7 +37,7 @@ const Input = ({
         defaultValue={defaultValue}
         disabled={disabled}
       />
-    </>
+    </div>
   );
 };
 

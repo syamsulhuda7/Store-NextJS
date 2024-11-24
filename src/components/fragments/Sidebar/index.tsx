@@ -11,10 +11,13 @@ type propstype = {
 
 const Sidebar = ({ lists }: propstype) => {
   const pathname = usePathname();
+  const newPathname = pathname.split("/")[1];
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebar__top}>
-        <h1 className={styles.sidebar__top__title}>Admin Panel</h1>
+        <h1 className={styles.sidebar__top__title}>
+          {newPathname === "member" ? "Member" : "Admin"} Panel
+        </h1>
         <div className={styles.sidebar__top__lists}>
           {lists.map((item, index) => (
             <Link

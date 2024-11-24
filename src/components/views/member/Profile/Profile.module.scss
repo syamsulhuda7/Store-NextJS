@@ -1,0 +1,50 @@
+@import "../../../../styles/variable.scss";
+
+.profile {
+  &__title {
+    font-size: 32px;
+    padding-bottom: 30px;
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    &__avatar {
+      height: fit-content;
+      width: fit-content;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+      img {
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+      }
+      button {
+        margin-top: 20px;
+        width: 100%;
+        label {
+          cursor: pointer;
+        }
+      }
+      &__input {
+        display: none;
+      }
+    }
+    &__detail {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
