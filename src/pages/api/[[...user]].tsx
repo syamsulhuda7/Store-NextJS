@@ -1,7 +1,6 @@
 import { deleteData, retrieveData, updateData } from "@/lib/firebase/service";
 import type { NextApiRequest, NextApiResponse } from "next";
 import jwt from "jsonwebtoken";
-import { message } from "antd";
 
 export default async function handler(
   req: NextApiRequest,
