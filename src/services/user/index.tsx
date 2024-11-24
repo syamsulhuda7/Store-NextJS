@@ -19,7 +19,7 @@ export const userServices = {
       },
     }),
   getProfile: (token: string) =>
-    instance.get(`api/user/profile`, {
+    instance.get(`/api/user/profile`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
