@@ -32,7 +32,6 @@ const RegisterView = () => {
       push("/auth/login");
       setIsLoading(false);
     } else {
-      console.log("result", result);
       setIsLoading(false);
       setError("Email is already registered");
     }

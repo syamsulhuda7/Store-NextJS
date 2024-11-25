@@ -11,7 +11,6 @@ const ModalDeleteUser = ({
   setUsersData,
 }: any) => {
   const session: any = useSession();
-  console.log(session);
 
   const handleDelete = async () => {
     userServices.deleteUser(deletedUser.id, session.data?.accessToken);

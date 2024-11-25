@@ -6,14 +6,18 @@ import Button from "@/components/ui/Button";
 import Image from "next/image";
 
 const ProfileMemberView = ({ profile }: any) => {
-  console.log(profile);
   return (
     <MemberLayout>
       <div className={styles.profile}>
         <div className={styles.profile__title}>Profile</div>
         <div className={styles.profile__content}>
           <div className={styles.profile__content__avatar}>
-            <Image src={profile.image} alt="profile" width={250} height={250} />
+            <Image
+              src={profile?.image}
+              alt="profile"
+              width={250}
+              height={250}
+            />
             <Button type="button">
               <label htmlFor="upload-image">Upload Image (max. 1Mb)</label>
             </Button>
@@ -28,25 +32,25 @@ const ProfileMemberView = ({ profile }: any) => {
             <Input
               name="fullname"
               label="Fullname"
-              defaultValue={profile.fullname}
+              defaultValue={profile?.fullname}
               type="text"
             />
             <Input
               name="email"
               label="Email"
-              defaultValue={profile.email}
+              defaultValue={profile?.email}
               type="email"
             />
             <Input
               name="password"
               label="Password"
-              defaultValue={profile.password}
+              defaultValue={profile?.password}
               type="password"
             />
             <Input
               name="phone"
               label="Phone"
-              defaultValue={profile.phone}
+              defaultValue={profile?.phone}
               type="number"
             />
             <Button type="submit">Update Profile</Button>

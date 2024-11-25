@@ -12,7 +12,6 @@ const MemberProfilePage = () => {
         session?.data?.accessToken
       );
       setProfile(data.data);
-      console.log(data);
     };
 
     getAllUsers();
